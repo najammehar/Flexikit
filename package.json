@@ -9,9 +9,9 @@
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test",
-    "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish",
-    "clean": "lerna clean"       
+    "postinstall": "lerna link",
+    "clean": "lerna clean",
+    "publish": "lerna publish"
   },
   "keywords": ["ui", "components", "flexikit", "library"],
   "author": "Najam Ul Hassan & Kanz Ul Eman",
