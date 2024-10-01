@@ -9,7 +9,6 @@
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test",
-    "postinstall": "lerna link",
     "clean": "lerna clean",
     "publish": "lerna publish"
   },
