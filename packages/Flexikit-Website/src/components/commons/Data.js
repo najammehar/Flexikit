@@ -1,5 +1,4 @@
-import { SpinningCircles } from "flexikit";
-import { PulsingDots } from "flexikit";
+import { SpinningCircles, PulsingDots, TripleSpin } from "flexikit";
 
 export const data = [
   {
@@ -52,6 +51,31 @@ export const data = [
     ],
     secCol: true,
   },
+  {
+    path: "/loaders/TripleSpin",
+    component: TripleSpin,
+    importPath: "flexikit",
+    usageCode: "TripleSpin",
+    propsTable: [
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        description: "Primary color of the loader",
+      },
+      { name: "size", defaultValue: "100px", description: "Size of the loader" },
+      {
+        name: "strokeWidth",
+        defaultValue: "2",
+        description: "Width of the loader stroke",
+      },
+      {
+        name: "duration",
+        defaultValue: "2000",
+        description: "Duration of the spinning animation",
+      },
+    ],
+    secCol: false,
+  }
 ];
 // export const buttonData = [
 //   {

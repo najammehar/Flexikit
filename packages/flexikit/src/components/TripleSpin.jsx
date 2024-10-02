@@ -1,0 +1,45 @@
+import React from "react";
+
+
+
+function TripleSpin({ color = '#340076' , size = 100, strokeWidth = 2 , duration = 2000 }) {
+
+    const keyframes = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+  const spin = {
+    animation: `spin ${duration}ms linear infinite`,
+  };
+
+  const circleStyle = {
+    "--circle-color": color,
+    "--stroke-width": `${strokeWidth}px`,
+  };
+
+  return (
+    <div 
+    className="rounded-full overflow-visible"
+    style={{ height: `${size}px`, width: `${size}px`, ...circleStyle }}>
+      <style>{keyframes}</style>
+      <div
+        className="flex justify-center items-center w-full h-full border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"
+        style={spin}
+      >
+        <div
+          className="flex justify-center items-center h-[90%] w-[90%] border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"
+          style={spin}
+        >
+          <div
+            className="h-[90%] w-[90%] border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"
+            style={spin}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default TripleSpin;
