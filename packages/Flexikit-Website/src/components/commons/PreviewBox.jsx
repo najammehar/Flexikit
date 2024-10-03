@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Copy } from "lucide-react";
 
 const PreviewBox = ({
   Component,
@@ -67,7 +68,12 @@ const PreviewBox = ({
       {/* Code Section */}
       <div className="mt-4">
         <h4 className="text-blue-500 text-lg font-bold mb-2">Code :</h4>
-        <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2">
+        <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2 relative">
+          <button className="inset-y-2 right-4 absolute"
+          onClick={() => navigator.clipboard.writeText(`import { ${UsageCode} } from '${importPath}'`)}
+          >
+            <Copy />
+          </button>
           <code>
             <span className="text-blue-500">import</span>
             <span className="text-orange-500">{` { `}</span>

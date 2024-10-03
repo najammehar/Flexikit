@@ -1,4 +1,4 @@
-import { SpinningCircles, PulsingDots, TripleSpin } from "flexikit";
+import { SpinningCircles, PulsingDots, TripleSpin , Dots} from "flexikit";
 
 export const data = [
   {
@@ -76,7 +76,44 @@ export const data = [
     ],
     secCol: false,
   }
+  ,
+  {
+    path: "/loaders/Dots",  
+    component: Dots,
+    importPath: "flexikit",
+    usageCode: "Dots",
+    propsTable: [
+      {
+        name: "count",
+        defaultValue: "8",
+        description: "Number of dots",
+      },
+      { name: "size", defaultValue: "80px", description: "Size of the loader" },
+      {
+        name: "dotSize",
+        defaultValue: "10",
+        description: "Size of the dots",
+      },
+      {
+        name: "color",
+        defaultValue: "#123456",
+        description: "Color of the dots",
+      },
+      {
+        name: "duration",
+        defaultValue: "1",
+        description: "Duration of the pulse animation",
+      },
+      {
+        name: "delay",
+        defaultValue: "0.125",
+        description: "Delay between each dot",
+      },
+    ],
+    secCol: false,
+    }
 ];
+
 // export const buttonData = [
 //   {
 //     path: "/buttons/Button1",
