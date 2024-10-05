@@ -5,8 +5,8 @@ import { constSize, constColor, constSecColor } from "../constant";
 function SpinningCircles({
   spinDuration = "2s",
   size = constSize,
-  color = constColor, // Default color as an example
-  secondaryColor = constSecColor, // Default color as an example
+  color = constColor,
+  secondaryColor = constSecColor,
 }) {
   const keyframes = `
         @keyframes degree {

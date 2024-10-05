@@ -3,8 +3,8 @@ import { constSize, constColor } from "../constant";
 
 const Dots = ({
   count = 8,
-  size = constSize,
-  dotSize = 10,
+  size = constSize * 3,
+  dotSize = constSize / 2,
   color = constColor,
   duration = 1,
   delay = 0.125,

@@ -3,29 +3,29 @@ import { constSize, constColor, constSecColor } from "../constant";
 
 function PulsingDots({
   size = constSize,
-  color = constColor, // Default primary color
-  secondaryColor = constSecColor, // Default secondary color
-  pulseDuration = "1s", // Time for one pulse animation cycle
+  color = constColor,
+  secondaryColor = constSecColor,
+  pulseDuration = "1s",
 }) {
   const keyframes = `
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 0.5;
-            }
-        }
-    `;
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+    }
+  `;
 
   const dotStyle = {
-    width: size,
-    height: size,
+    width: `${size}px`,
+    height: `${size}px`,
     borderRadius: "50%",
     display: "inline-block",
-    margin: "0 5px",
+    margin: `0 ${size / 8}px`,
     animation: `pulse ${pulseDuration} ease-in-out infinite`,
   };
 
