@@ -1,9 +1,10 @@
 import React from "react";
+import { constSize, constColor, constSecColor } from "../constant";
 
 function PulsingDots({
-  size = "16px",
-  color = "#3498db", // Default primary color
-  secondaryColor = "#e74c3c", // Default secondary color
+  size = constSize,
+  color = constColor, // Default primary color
+  secondaryColor = constSecColor, // Default secondary color
   pulseDuration = "1s", // Time for one pulse animation cycle
 }) {
   const keyframes = `

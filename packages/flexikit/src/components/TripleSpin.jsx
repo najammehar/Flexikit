@@ -1,10 +1,13 @@
 import React from "react";
+import { constSize, constColor } from "../constant";
 
-
-
-function TripleSpin({ color = '#340076' , size = 100, strokeWidth = 2 , duration = 2000 }) {
-
-    const keyframes = `
+function TripleSpin({
+  color = constColor,
+  size = constSize,
+  strokeWidth = 2,
+  duration = 2000,
+}) {
+  const keyframes = `
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -20,9 +23,10 @@ function TripleSpin({ color = '#340076' , size = 100, strokeWidth = 2 , duration
   };
 
   return (
-    <div 
-    className="rounded-full overflow-visible"
-    style={{ height: `${size}px`, width: `${size}px`, ...circleStyle }}>
+    <div
+      className="rounded-full overflow-visible"
+      style={{ height: `${size}px`, width: `${size}px`, ...circleStyle }}
+    >
       <style>{keyframes}</style>
       <div
         className="flex justify-center items-center w-full h-full border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"

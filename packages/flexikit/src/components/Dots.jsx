@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
+import { constSize, constColor } from "../constant";
 
 const Dots = ({
   count = 8,
-  size = 80,
+  size = constSize,
   dotSize = 10,
-  color = '#123456',
+  color = constColor,
   duration = 1,
-  delay = 0.125
+  delay = 0.125,
 }) => {
   const keyframes = `
     @keyframes pulse {
@@ -18,13 +19,16 @@ const Dots = ({
   const radius = (size - dotSize) / 2;
 
   return (
-    <div className="relative" style={{ width: `${size}px`, height: `${size}px` }}>
+    <div
+      className="relative"
+      style={{ width: `${size}px`, height: `${size}px` }}
+    >
       <style>{keyframes}</style>
       {Array.from({ length: count }).map((_, index) => {
         const angle = (index / count) * 2 * Math.PI;
         const x = radius * Math.cos(angle);
         const y = radius * Math.sin(angle);
-        
+
         return (
           <div
             key={index}
@@ -32,11 +36,13 @@ const Dots = ({
             style={{
               width: `${dotSize}px`,
               height: `${dotSize}px`,
-              backgroundColor: color.startsWith('#') ? color : `var(--tw-${color}, ${color})`,
-              top: `calc(50% - ${dotSize/2}px + ${y}px)`,
-              left: `calc(50% - ${dotSize/2}px + ${x}px)`,
+              backgroundColor: color.startsWith("#")
+                ? color
+                : `var(--tw-${color}, ${color})`,
+              top: `calc(50% - ${dotSize / 2}px + ${y}px)`,
+              left: `calc(50% - ${dotSize / 2}px + ${x}px)`,
               animation: `pulse ${duration}s ease-in-out infinite`,
-              animationDelay: `${index * delay}s`
+              animationDelay: `${index * delay}s`,
             }}
           />
         );
