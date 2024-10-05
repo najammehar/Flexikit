@@ -94,7 +94,7 @@ const PreviewBox = ({
             <span className="text-green-500">{` '${importPath}'`}</span>
           </code>
         </pre>
-        <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2">
+        <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2 relative">
         <button className="inset-y-2 right-4 absolute"
           onClick={() =>copyToClipBoard(`<${UsageCode} />`, setUsageCopy)}
           >
@@ -118,6 +118,7 @@ const PreviewBox = ({
               <th className="p-2 border-b dark:border-gray-600">
                 Default Value
               </th>
+              <th className="p-2 border-b dark:border-gray-600">Recommended</th>
               <th className="p-2 border-b dark:border-gray-600">Description</th>
             </tr>
           </thead>
@@ -126,6 +127,7 @@ const PreviewBox = ({
               <tr key={index}>
                 <td className="p-2">{prop.name}</td>
                 <td className="p-2">{prop.defaultValue}</td>
+                <td className="p-2">{prop.recommended}</td>
                 <td className="p-2">{prop.description}</td>
               </tr>
             ))}

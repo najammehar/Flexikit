@@ -10,17 +10,20 @@ export const data = [
       {
         name: "spinDuration",
         defaultValue: "2s",
+        recommended: "1s to 3s",
         description: "Duration of the spinning animation",
       },
-      { name: "size", defaultValue: "16px", description: "Size of the loader" },
+      { name: "size", defaultValue: "30px", recommended: "25px to 40px", description: "Size of the loader" },
       {
         name: "primaryColor",
         defaultValue: "#ff5733",
+        recommended: "Any color",
         description: "Primary color of the loader",
       },
       {
         name: "secondaryColor",
         defaultValue: "#ffc300",
+        recommended: "Any color",
         description: "Secondary color of the loader",
       },
     ],
