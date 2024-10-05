@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Copy } from "lucide-react";
+import { Copy, CopyCheck, ClipboardCheck } from "lucide-react";
 
 const PreviewBox = ({
   Component,
@@ -12,6 +12,17 @@ const PreviewBox = ({
   const [bgColor, setBgColor] = useState("#ffffff");
   const [compColor, setCompColor] = useState("#340076");
   const [secondaryColor, setSecondaryColor] = useState("#fffc44");
+  const [importCopy, setImportCopy] = useState(false);
+  const [usageCopy, setUsageCopy] = useState(false);
+
+  const copyToClipBoard = (text, setCopied) => {
+    navigator.clipboard.writeText(text);
+    // show the copied icon for three seconds
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  }
 
   return (
     <div className="p-4 relative z-10">
@@ -70,9 +81,9 @@ const PreviewBox = ({
         <h4 className="text-blue-500 text-lg font-bold mb-2">Code :</h4>
         <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2 relative">
           <button className="inset-y-2 right-4 absolute"
-          onClick={() => navigator.clipboard.writeText(`import { ${UsageCode} } from '${importPath}'`)}
+          onClick={() =>copyToClipBoard(`import { ${UsageCode} } from '${importPath}'`, setImportCopy)}
           >
-            <Copy />
+            {importCopy ? (<ClipboardCheck />):(<Copy />)}
           </button>
           <code>
             <span className="text-blue-500">import</span>
@@ -84,6 +95,11 @@ const PreviewBox = ({
           </code>
         </pre>
         <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2">
+        <button className="inset-y-2 right-4 absolute"
+          onClick={() =>copyToClipBoard(`<${UsageCode} />`, setUsageCopy)}
+          >
+            {usageCopy ? (<ClipboardCheck />):(<Copy />)}
+          </button>
           <code>
             <span className="text-green-500">{`<`}</span>
             <span>{`${UsageCode}`}</span>
