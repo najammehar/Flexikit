@@ -3,9 +3,10 @@ import { constSize, constColor } from "../constant";
 
 function TripleSpin({
   color = constColor,
-  size = constSize * 4,
-  strokeWidth = 4,
-  duration = 2000,
+  size = constSize * 3,
+  strokeWidth = 3,
+  duration = '2s',
+  loading = true,
 }) {
   const keyframes = `
     @keyframes spin {
@@ -15,31 +16,26 @@ function TripleSpin({
   `;
 
   const spin = {
-    animation: `spin ${duration}ms linear infinite`,
-  };
-
-  const circleStyle = {
-    "--circle-color": color,
-    "--stroke-width": `${strokeWidth}px`,
+    animation: `spin ${duration} linear infinite`,
   };
 
   return (
     <div
-      className="rounded-full overflow-visible"
-      style={{ height: `${size}px`, width: `${size}px`, ...circleStyle }}
+      className={`${loading ? 'flex' : 'hidden'}`}
+      style={{ height: `${size}px`, width: `${size}px`}}
     >
       <style>{keyframes}</style>
       <div
-        className="flex justify-center items-center w-full h-full border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"
-        style={spin}
+        className="flex justify-center items-center w-full h-full rounded-full"
+        style={{...spin, borderTop: `${strokeWidth}px solid ${color}`, borderRight: `${strokeWidth}px solid transparent`, borderBottom: `${strokeWidth}px solid transparent`, borderLeft: `${strokeWidth}px solid transparent`}}
       >
         <div
-          className="flex justify-center items-center h-[90%] w-[90%] border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"
-          style={{ ...spin, animationDelay: "-0.3s" }}
+          className="flex justify-center items-center rounded-full"
+          style={{ ...spin, borderTop: `${strokeWidth}px solid transparent`, borderRight: `${strokeWidth}px solid ${color}`, borderBottom: `${strokeWidth}px solid transparent`, borderLeft: `${strokeWidth}px solid transparent`, height: '90%', width: '90%' }}
         >
           <div
-            className="h-[90%] w-[90%] border-[length:var(--stroke-width)] border-transparent border-t-[color:var(--circle-color)] rounded-full"
-            style={{ ...spin, animationDelay: "-0.6s" }}
+            className="rounded-full"
+            style={{ ...spin, borderTop: `${strokeWidth}px solid transparent`, borderRight: `${strokeWidth}px solid transparent`, borderBottom: `${strokeWidth}px solid ${color}`, borderLeft: `${strokeWidth}px solid transparent`, height: '90%', width: '90%'  }}
           ></div>
         </div>
       </div>

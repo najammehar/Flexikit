@@ -1,13 +1,14 @@
 import React from "react";
-import "../index.css";
 import { constSize, constColor, constSecColor } from "../constant";
 
 function SpinningCircles({
-  spinDuration = "2s",
-  size = constSize,
+  duration = "2s",
+  size = constSize * 1.5,
   color = constColor,
   secondaryColor = constSecColor,
+  loading = true,
 }) {
+  const dotSize = size / 2;
   const keyframes = `
         @keyframes degree {
             0%, 100% { transform: translateY(0); }
@@ -32,27 +33,27 @@ function SpinningCircles({
     `;
 
   const degree = {
-    animation: `degree ${spinDuration} ease-in-out infinite`,
+    animation: `degree ${duration} ease-in-out infinite`,
   };
   const degree135 = {
-    animation: `degree135 ${spinDuration} ease-in-out infinite`,
+    animation: `degree135 ${duration} ease-in-out infinite`,
   };
   const degree225 = {
-    animation: `degree225 ${spinDuration} ease-in-out infinite`,
+    animation: `degree225 ${duration} ease-in-out infinite`,
   };
   const degree315 = {
-    animation: `degree315 ${spinDuration} ease-in-out infinite`,
+    animation: `degree315 ${duration} ease-in-out infinite`,
   };
   const spin = {
-    animation: `spin ${spinDuration} ease-in-out infinite`,
+    animation: `spin ${duration} ease-in-out infinite`,
   };
   const sizeStyle = {
-    width: size,
-    height: size,
+    width: dotSize,
+    height: dotSize,
   };
 
   return (
-    <div className="inline-block" style={spin}>
+    <div className={`${loading ? 'block' : 'hidden'}`} style={{...spin, height: `${size}`, width: `${size}`}}>
       <div className="flex gap-1 mb-1">
         <style>{keyframes}</style>
         <div

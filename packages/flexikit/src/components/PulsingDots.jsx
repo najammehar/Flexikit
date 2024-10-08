@@ -3,11 +3,12 @@ import { constSize, constColor, constSecColor } from "../constant";
 
 function PulsingDots({
   size = constSize * 2,
-  dotSize = constSize / 2,
   color = constColor,
   secondaryColor = constSecColor,
-  pulseDuration = "1s",
+  duration = "1s",
+  loading = true,
 }) {
+  const dotSize = constSize / 2;
   const keyframes = `
     @keyframes pulse {
       0%, 100% {
@@ -27,7 +28,7 @@ function PulsingDots({
     borderRadius: "50%",
     display: "inline-block",
     margin: `0 ${dotSize / 8}px`,
-    animation: `pulse ${pulseDuration} ease-in-out infinite`,
+    animation: `pulse ${duration} ease-in-out infinite`,
   };
 
   const dot1 = {
@@ -46,7 +47,10 @@ function PulsingDots({
   };
 
   return (
-    <div className="flex items-center justify-center" style={{width:size, height:size}}>
+    <div
+      className={`${loading ? 'flex' : 'hidden'} items-center justify-center`}
+      style={{ width: size, height: size }}
+    >
       <style>{keyframes}</style>
       <div className="flex justify-center items-center">
         <div style={{ ...dotStyle, ...dot1 }} />

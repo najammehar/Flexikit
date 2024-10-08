@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Copy, CopyCheck, ClipboardCheck } from "lucide-react";
+import { Copy, ClipboardCheck } from "lucide-react";
 
 const PreviewBox = ({
   Component,
@@ -8,21 +8,19 @@ const PreviewBox = ({
   propsTable,
   secColor = true,
 }) => {
-  // State for customizing background and component color
   const [bgColor, setBgColor] = useState("#ffffff");
-  const [compColor, setCompColor] = useState("#340076");
-  const [secondaryColor, setSecondaryColor] = useState("#fffc44");
+  const [compColor, setCompColor] = useState("#3498db");
+  const [secondaryColor, setSecondaryColor] = useState("#e74c3c");
   const [importCopy, setImportCopy] = useState(false);
   const [usageCopy, setUsageCopy] = useState(false);
 
   const copyToClipBoard = (text, setCopied) => {
     navigator.clipboard.writeText(text);
-    // show the copied icon for three seconds
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
     }, 1500);
-  }
+  };
 
   return (
     <div className="p-4 relative z-10">
@@ -80,10 +78,16 @@ const PreviewBox = ({
       <div className="mt-4">
         <h4 className="text-blue-500 text-lg font-bold mb-2">Code :</h4>
         <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2 relative">
-          <button className="inset-y-2 right-4 absolute"
-          onClick={() =>copyToClipBoard(`import { ${UsageCode} } from '${importPath}'`, setImportCopy)}
+          <button
+            className="inset-y-2 right-4 absolute"
+            onClick={() =>
+              copyToClipBoard(
+                `import { ${UsageCode} } from '${importPath}'`,
+                setImportCopy
+              )
+            }
           >
-            {importCopy ? (<ClipboardCheck />):(<Copy />)}
+            {importCopy ? <ClipboardCheck /> : <Copy />}
           </button>
           <code>
             <span className="text-blue-500">import</span>
@@ -95,10 +99,11 @@ const PreviewBox = ({
           </code>
         </pre>
         <pre className="bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md p-4 rounded mb-2 relative">
-        <button className="inset-y-2 right-4 absolute"
-          onClick={() =>copyToClipBoard(`<${UsageCode} />`, setUsageCopy)}
+          <button
+            className="inset-y-2 right-4 absolute"
+            onClick={() => copyToClipBoard(`<${UsageCode} />`, setUsageCopy)}
           >
-            {usageCopy ? (<ClipboardCheck />):(<Copy />)}
+            {usageCopy ? <ClipboardCheck /> : <Copy />}
           </button>
           <code>
             <span className="text-green-500">{`<`}</span>
@@ -111,24 +116,22 @@ const PreviewBox = ({
       {/* Props Table */}
       <div className="mt-4">
         <h4 className="text-blue-500 text-lg font-bold mb-2">Props Table:</h4>
-        <table className="w-full bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md rounded-md text-left max-w-3xl overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 dark:scrollbar-track-gray-950">
+        <table className="w-full bg-gray-200 dark:bg-gray-800 dark:bg-opacity-50 dark:backdrop-blur-md rounded-md text-left overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 dark:scrollbar-track-gray-950">
           <thead>
             <tr>
-              <th className="p-2 border-b dark:border-gray-600">Prop Name</th>
-              <th className="p-2 border-b dark:border-gray-600">
-                Default Value
-              </th>
-              <th className="p-2 border-b dark:border-gray-600">Recommended</th>
-              <th className="p-2 border-b dark:border-gray-600">Description</th>
+              <th className="p-4 border-b dark:border-gray-600">Prop Name</th>
+              <th className="p-4 border-b dark:border-gray-600">Default</th>
+              <th className="p-4 border-b dark:border-gray-600">Recommended</th>
+              <th className="p-4 border-b dark:border-gray-600">Description</th>
             </tr>
           </thead>
           <tbody>
             {propsTable.map((prop, index) => (
               <tr key={index}>
-                <td className="p-2">{prop.name}</td>
-                <td className="p-2">{prop.defaultValue}</td>
-                <td className="p-2">{prop.recommended}</td>
-                <td className="p-2">{prop.description}</td>
+                <td className="p-4">{prop.name}</td>
+                <td className="p-4">{prop.defaultValue}</td>
+                <td className="p-4">{prop.recommended}</td>
+                <td className="p-4">{prop.description}</td>
               </tr>
             ))}
           </tbody>

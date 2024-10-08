@@ -1,4 +1,4 @@
-import { SpinningCircles, PulsingDots, TripleSpin , Dots} from "flexikit";
+import { SpinningCircles, PulsingDots, TripleSpin, Dots, AudioWave } from "flexikit";
 
 export const data = [
   {
@@ -13,7 +13,12 @@ export const data = [
         recommended: "1s to 3s",
         description: "Duration of the spinning animation",
       },
-      { name: "size", defaultValue: "30px", recommended: "25px to 40px", description: "Size of the loader" },
+      {
+        name: "size",
+        defaultValue: "30px",
+        recommended: "25px to 40px",
+        description: "Size of the loader",
+      },
       {
         name: "primaryColor",
         defaultValue: "#ff5733",
@@ -26,6 +31,12 @@ export const data = [
         recommended: "Any color",
         description: "Secondary color of the loader",
       },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      }
     ],
     secCol: true,
   },
@@ -51,6 +62,12 @@ export const data = [
         defaultValue: "#e74c3c",
         description: "Secondary color of the loader",
       },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      }
     ],
     secCol: true,
   },
@@ -63,58 +80,101 @@ export const data = [
       {
         name: "color",
         defaultValue: "#3498db",
-        description: "Primary color of the loader",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
       },
-      { name: "size", defaultValue: "100px", description: "Size of the loader" },
+      {
+        name: "size",
+        defaultValue: "100px",
+        recommended: "50px to 150px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
+      },
       {
         name: "strokeWidth",
-        defaultValue: "2",
-        description: "Width of the loader stroke",
+        defaultValue: "4px",
+        recommended: "2px to 6px",
+        description: "Width of the loader stroke. Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "duration",
-        defaultValue: "2000",
-        description: "Duration of the spinning animation",
+        defaultValue: "2s",
+        recommended: "1s to 3s",
+        description: "Duration of the spinning animation. Should be a string with unit",
       },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      }
     ],
     secCol: false,
-  }
-  ,
+  },
   {
-    path: "/loaders/Dots",  
+    path: "/loaders/Dots",
     component: Dots,
     importPath: "flexikit",
     usageCode: "Dots",
     propsTable: [
-      {
-        name: "count",
-        defaultValue: "8",
-        description: "Number of dots",
-      },
-      { name: "size", defaultValue: "80px", description: "Size of the loader" },
-      {
-        name: "dotSize",
-        defaultValue: "10",
-        description: "Size of the dots",
+      { name: "size",
+        defaultValue: "60px",
+        recommended: "40px to 100px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "color",
-        defaultValue: "#123456",
-        description: "Color of the dots",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
       },
       {
         name: "duration",
-        defaultValue: "1",
-        description: "Duration of the pulse animation",
+        defaultValue: "1s",
+        recommended: "0.5s to 1.5s",
+        description: "Duration of the animation. Should be a string with unit",
       },
       {
-        name: "delay",
-        defaultValue: "0.125",
-        description: "Delay between each dot",
-      },
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      }
     ],
     secCol: false,
-    }
+  },
+  {
+    path: "/loaders/AudioWave",
+    component: AudioWave,
+    importPath: "flexikit",
+    usageCode: "AudioWave",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "90px",
+        recommended: "50px to 150px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "duration",
+        defaultValue: "1s",
+        recommended: "0.7s to 1.5s",
+        description: "Duration of the pulse animation, should be a string with unit",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      }
+    ],
+    secCol: false,
+  },
 ];
 
 // export const buttonData = [

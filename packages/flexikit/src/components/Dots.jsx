@@ -2,13 +2,13 @@ import React from "react";
 import { constSize, constColor } from "../constant";
 
 const Dots = ({
-  count = 8,
-  size = constSize * 3,
-  dotSize = constSize / 2,
+  size = constSize * 2,
   color = constColor,
-  duration = 1,
-  delay = 0.125,
+  duration = '1s',
+  loading = true,
 }) => {
+
+  const dotSize = constSize / 2;
   const keyframes = `
     @keyframes pulse {
       0%, 100% { transform: scale(0); opacity: 0.5; }
@@ -20,12 +20,12 @@ const Dots = ({
 
   return (
     <div
-      className="relative"
+      className={`relative ${loading ? 'block' : 'hidden'}`}
       style={{ width: `${size}px`, height: `${size}px` }}
     >
       <style>{keyframes}</style>
-      {Array.from({ length: count }).map((_, index) => {
-        const angle = (index / count) * 2 * Math.PI;
+      {Array.from({ length: 8 }).map((_, index) => {
+        const angle = (index / 8) * 2 * Math.PI;
         const x = radius * Math.cos(angle);
         const y = radius * Math.sin(angle);
 
@@ -41,8 +41,8 @@ const Dots = ({
                 : `var(--tw-${color}, ${color})`,
               top: `calc(50% - ${dotSize / 2}px + ${y}px)`,
               left: `calc(50% - ${dotSize / 2}px + ${x}px)`,
-              animation: `pulse ${duration}s ease-in-out infinite`,
-              animationDelay: `${index * delay}s`,
+              animation: `pulse ${duration} ease-in-out infinite`,
+              animationDelay: `${index * 0.125}s`,
             }}
           />
         );
