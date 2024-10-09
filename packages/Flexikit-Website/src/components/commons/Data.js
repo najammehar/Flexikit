@@ -1,4 +1,11 @@
-import { SpinningCircles, PulsingDots, TripleSpin, Dots, AudioWave } from "flexikit";
+import {
+  SpinningCircles,
+  PulsingDots,
+  TripleSpin,
+  Dots,
+  AudioWave,
+  WavePulseLoader,
+} from "flexikit";
 
 export const data = [
   {
@@ -8,35 +15,37 @@ export const data = [
     usageCode: "SpinningCircles",
     propsTable: [
       {
-        name: "spinDuration",
+        name: "Duration",
         defaultValue: "2s",
         recommended: "1s to 3s",
-        description: "Duration of the spinning animation",
+        description:
+          "Duration of the pulse animation, should be a string with unit",
       },
       {
         name: "size",
         defaultValue: "30px",
         recommended: "25px to 40px",
-        description: "Size of the loader",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "primaryColor",
-        defaultValue: "#ff5733",
+        defaultValue: "#3498db",
         recommended: "Any color",
-        description: "Primary color of the loader",
+        description: "Primary (Hex color) of the loader, should be a string",
       },
       {
         name: "secondaryColor",
-        defaultValue: "#ffc300",
+        defaultValue: "#e74c3c",
         recommended: "Any color",
-        description: "Secondary color of the loader",
+        description: "Secondary (Hex color) of the loader, should be a string",
       },
       {
         name: "loading",
         defaultValue: "true",
         recommended: "true or false",
         description: "Boolean value to show or hide the loader",
-      }
+      },
     ],
     secCol: true,
   },
@@ -47,27 +56,37 @@ export const data = [
     usageCode: "PulsingDots",
     propsTable: [
       {
-        name: "pulseDuration",
+        name: "Duration",
         defaultValue: "1s",
-        description: "Duration of the pulse animation",
+        recommended: "1s to 3s",
+        description:
+          "Duration of the spinning animation. Should be a string with unit",
       },
-      { name: "size", defaultValue: "16px", description: "Size of the loader" },
+      {
+        name: "size",
+        defaultValue: "30px",
+        recommended: "25px to 80px",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
       {
         name: "color",
         defaultValue: "#3498db",
-        description: "Primary color of the loader",
+        recommended: "Any color",
+        description: "Primary (Hex color) of the loader, should be a string",
       },
       {
         name: "secondaryColor",
         defaultValue: "#e74c3c",
-        description: "Secondary color of the loader",
+        recommended: "Any color",
+        description: "Secondary (Hex color) of the loader, should be a string",
       },
       {
         name: "loading",
         defaultValue: "true",
         recommended: "true or false",
         description: "Boolean value to show or hide the loader",
-      }
+      },
     ],
     secCol: true,
   },
@@ -87,26 +106,29 @@ export const data = [
         name: "size",
         defaultValue: "100px",
         recommended: "50px to 150px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "strokeWidth",
         defaultValue: "4px",
         recommended: "2px to 6px",
-        description: "Width of the loader stroke. Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Width of the loader stroke. Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "duration",
         defaultValue: "2s",
         recommended: "1s to 3s",
-        description: "Duration of the spinning animation. Should be a string with unit",
+        description:
+          "Duration of the spinning animation. Should be a string with unit",
       },
       {
         name: "loading",
         defaultValue: "true",
         recommended: "true or false",
         description: "Boolean value to show or hide the loader",
-      }
+      },
     ],
     secCol: false,
   },
@@ -116,10 +138,12 @@ export const data = [
     importPath: "flexikit",
     usageCode: "Dots",
     propsTable: [
-      { name: "size",
+      {
+        name: "size",
         defaultValue: "60px",
         recommended: "40px to 100px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "color",
@@ -138,7 +162,7 @@ export const data = [
         defaultValue: "true",
         recommended: "true or false",
         description: "Boolean value to show or hide the loader",
-      }
+      },
     ],
     secCol: false,
   },
@@ -152,13 +176,15 @@ export const data = [
         name: "size",
         defaultValue: "90px",
         recommended: "50px to 150px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "duration",
         defaultValue: "1s",
         recommended: "0.7s to 1.5s",
-        description: "Duration of the pulse animation, should be a string with unit",
+        description:
+          "Duration of the pulse animation, should be a string with unit",
       },
       {
         name: "color",
@@ -171,7 +197,42 @@ export const data = [
         defaultValue: "true",
         recommended: "true or false",
         description: "Boolean value to show or hide the loader",
-      }
+      },
+    ],
+    secCol: false,
+  },
+  {
+    path: "/loaders/WavePulseLoader",
+    component: WavePulseLoader,
+    importPath: "flexikit",
+    usageCode: "WavePulseLoader",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "30px",
+        recommended: "40px to 100px",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "duration",
+        defaultValue: "1s",
+        recommended: "1s to 3s",
+        description:
+          "Duration of the pulse animation, should be a string with unit",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
     ],
     secCol: false,
   },
