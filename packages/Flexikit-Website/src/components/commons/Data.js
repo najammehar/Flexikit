@@ -6,6 +6,7 @@ import {
   AudioWave,
   WavePulseLoader,
   SpinningSquares,
+  Blocks,
 } from "flexikit";
 
 export const data = [
@@ -272,6 +273,46 @@ export const data = [
     ],
     secCol: false,
   },
+  {
+  path: "/loaders/Blocks",
+  component: Blocks,
+  importPath: "flexikit",
+  usageCode: "Blocks",
+  propsTable: [
+    {
+      name: "size",
+      defaultValue: "60px",
+      recommended: "40px to 100px",
+      description:
+        "Can be number or string. In both String & number, unit is assumed as px.",
+    },
+    {
+      name: "color",
+      defaultValue: "#3498db",
+      recommended: "Any color",
+      description: "Hex color of the loader, should be a string",
+    },
+    {
+      name: "secondaryColor",
+      defaultValue: "#e74c3c",
+      recommended: "Any color",
+      description: "Hex color of the loader, should be a string",
+    },
+    {
+      name: "duration",
+      defaultValue: "2s",
+      recommended: "1.5s to 3s",
+      description: "Duration of the pulse animation, should be a string with unit",
+    },
+    {
+      name: "loading",
+      defaultValue: "true",
+      recommended: "true or false",
+      description: "Boolean value to show or hide the loader",
+    }
+  ],
+  secCol: true,
+  }
 ];
 
 // export const buttonData = [
