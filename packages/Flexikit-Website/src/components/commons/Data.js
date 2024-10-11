@@ -5,6 +5,7 @@ import {
   Dots,
   AudioWave,
   WavePulseLoader,
+  SpinningSquares,
 } from "flexikit";
 
 export const data = [
@@ -226,6 +227,41 @@ export const data = [
         defaultValue: "#3498db",
         recommended: "Any color",
         description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: false,
+  },
+  {
+    path: "/loaders/SpinningSquares",
+    component: SpinningSquares,
+    importPath: "flexikit",
+    usageCode: "SpinningSquares",
+    propsTable: [
+      {
+        name: "Duration",
+        defaultValue: "4s",
+        recommended: "2s to 6s",
+        description:
+          "Duration of the pulse animation, should be a string with unit",
+      },
+      {
+        name: "size",
+        defaultValue: "60px",
+        recommended: "25px to 80px",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Primary (Hex color) of the loader, should be a string",
       },
       {
         name: "loading",

@@ -3459,7 +3459,7 @@ flatted@^3.2.9:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.3.1.tgz"
   integrity sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==
 
-"flexikit-website@file:D:\\Najam\\Projects\\Flexikit_library\\packages\\Flexikit-Website":
+"flexikit-website@file:K:\\web devp\\Flexikit\\packages\\Flexikit-Website":
   version "0.0.0"
   resolved "file:packages/Flexikit-Website"
   dependencies:
@@ -3470,7 +3470,7 @@ flatted@^3.2.9:
     react-router-dom "^6.26.2"
     tailwind-scrollbar "^3.1.0"
 
-"flexikit@file:../flexikit", "flexikit@file:D:\\Najam\\Projects\\Flexikit_library\\packages\\flexikit":
+"flexikit@file:../flexikit", "flexikit@file:K:\\web devp\\Flexikit\\packages\\flexikit":
   version "1.0.0"
   resolved "file:packages/flexikit"
 
@@ -7711,6 +7711,11 @@ yargs@^17.6.2, yargs@17.7.2:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
+
+yarn@^1.22.22:
+  version "1.22.22"
+  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.22.tgz"
+  integrity sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
