@@ -7,7 +7,7 @@ function WaveLoader({
   duration = "1s",
   loading = true,
 }) {
-  const dotSize = size / 6;
+  const dotSize = (size / 6) * 1.5;
   const keyframes = `
     @keyframes wave {
       0%, 100% { transform: translateY(0); }
@@ -22,7 +22,7 @@ function WaveLoader({
     backgroundColor: color,
     display: "inline-block",
     animation: `wave ${duration} ease-in-out infinite`,
-    margin: `0 ${dotSize / 4}px`,
+    margin: `0 ${dotSize / 10}px`,
   };
 
   const dot1 = {
