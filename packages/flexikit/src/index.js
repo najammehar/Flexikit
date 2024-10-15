@@ -6,3 +6,4 @@ export { default as AudioWave } from "./components/AudioWave.jsx";
 export { default as WavePulseLoader } from "./components/WavePulseLoader.jsx";
 export { default as SpinningSquares } from "./components/SpinningSquares.jsx";
 export { default as EmergingCircles } from "./components/EmergingCircles.jsx";
+export { default as Blocks } from "./components/Blocks.jsx";

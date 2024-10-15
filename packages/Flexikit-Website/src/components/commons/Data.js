@@ -7,6 +7,7 @@ import {
   WavePulseLoader,
   SpinningSquares,
   EmergingCircles,
+  Blocks,
 } from "flexikit";
 
 export const data = [
@@ -274,46 +275,86 @@ export const data = [
     secCol: false,
   },
   {
-    path: "/loaders/EmergingCircles",
-    component: EmergingCircles,
+    path: "/loaders/Blocks",
+    component: Blocks,
     importPath: "flexikit",
-    usageCode: "EmergingCircles",
+    usageCode: "Blocks",
     propsTable: [
-      {
-        name: "Duration",
-        defaultValue: "1.5s",
-        recommended: "1s to 6s",
-        description:
-          "Duration of the pulse animation, should be a string with unit",
-      },
       {
         name: "size",
         defaultValue: "60px",
-        recommended: "25px to 80px",
+        recommended: "40px to 100px",
         description:
           "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
-        name: "primaryColor",
+        name: "color",
         defaultValue: "#3498db",
         recommended: "Any color",
-        description: "Primary (Hex color) of the loader, should be a string",
+        description: "Hex color of the loader, should be a string",
       },
       {
         name: "secondaryColor",
         defaultValue: "#e74c3c",
         recommended: "Any color",
-        description: "Secondary (Hex color) of the loader, should be a string",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "2s",
+        recommended: "1.5s to 3s",
+        description: "Duration of the pulse animation, should be a string with unit",
       },
       {
         name: "loading",
         defaultValue: "true",
         recommended: "true or false",
         description: "Boolean value to show or hide the loader",
-      },
+      }
     ],
     secCol: true,
-  },
+    },
+    {
+      path: "/loaders/EmergingCircles",
+      component: EmergingCircles,
+      importPath: "flexikit",
+      usageCode: "EmergingCircles",
+      propsTable: [
+        {
+          name: "Duration",
+          defaultValue: "1.5s",
+          recommended: "1s to 6s",
+          description:
+            "Duration of the pulse animation, should be a string with unit",
+        },
+        {
+          name: "size",
+          defaultValue: "60px",
+          recommended: "25px to 80px",
+          description:
+            "Can be number or string. In both String & number, unit is assumed as px.",
+        },
+        {
+          name: "primaryColor",
+          defaultValue: "#3498db",
+          recommended: "Any color",
+          description: "Primary (Hex color) of the loader, should be a string",
+        },
+        {
+          name: "secondaryColor",
+          defaultValue: "#e74c3c",
+          recommended: "Any color",
+          description: "Secondary (Hex color) of the loader, should be a string",
+        },
+        {
+          name: "loading",
+          defaultValue: "true",
+          recommended: "true or false",
+          description: "Boolean value to show or hide the loader",
+        },
+      ],
+      secCol: true,
+    }
 ];
 
 // export const buttonData = [

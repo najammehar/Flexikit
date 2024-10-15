@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import { constSize, constColor, constSecColor } from "../constant";
 
 function SpinningCircles({
