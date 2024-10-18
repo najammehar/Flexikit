@@ -8,3 +8,4 @@ export { default as SpinningSquares } from "./components/SpinningSquares.jsx";
 export { default as EmergingCircles } from "./components/EmergingCircles.jsx";
 export { default as Blocks } from "./components/Blocks.jsx";
 export { default as LoadingText } from "./components/LoadingText.jsx";
+export { default as Clock } from "./components/Clock.jsx";

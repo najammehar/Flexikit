@@ -9,6 +9,7 @@ import {
   EmergingCircles,
   Blocks,
   LoadingText,
+  Clock
 } from "flexikit";
 
 export const data = [
@@ -385,6 +386,46 @@ export const data = [
     ],
     secCol: false,
   },
+  {
+    path: "/loaders/Clock",
+    component: Clock,
+    importPath: "flexikit",
+    usageCode: "Clock",
+    propsTable: [
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "size",
+        defaultValue: "100px",
+        recommended: "50px to 150px",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "hourHandDuration",
+        defaultValue: "30",
+        recommended: "20 to 60",
+        description: "Duration of the hour hand rotation",
+      },
+      {
+        name: "minuteHandDuration",
+        defaultValue: "1",
+        recommended: "0.5 to 2",
+        description: "Duration of the minute hand rotation",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: false,
+  }
 ];
 
 // export const buttonData = [
