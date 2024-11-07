@@ -9,7 +9,8 @@ import {
   EmergingCircles,
   Blocks,
   LoadingText,
-  Clock
+  Clock,
+  SyncRotatingDots,
 } from "flexikit";
 
 export const data = [
@@ -407,14 +408,14 @@ export const data = [
       },
       {
         name: "hourHandDuration",
-        defaultValue: "30",
-        recommended: "20 to 60",
+        defaultValue: "30s",
+        recommended: "20s to 60s",
         description: "Duration of the hour hand rotation",
       },
       {
         name: "minuteHandDuration",
-        defaultValue: "1",
-        recommended: "0.5 to 2",
+        defaultValue: "1s",
+        recommended: "0.5s to 2s",
         description: "Duration of the minute hand rotation",
       },
       {
@@ -425,6 +426,38 @@ export const data = [
       },
     ],
     secCol: false,
+  },
+  {
+    path: "/loaders/SyncRotatingDots",
+    component: SyncRotatingDots,
+    importPath: "flexikit",
+    usageCode: "SyncRotatingDots",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "10px",
+        recommended: "10px to 20px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "duration",
+        defaultValue: "1.5s",
+        recommended: "1s to 3s",
+        description: "Duration of the animation, should be a string with unit",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
   }
 ];
 
