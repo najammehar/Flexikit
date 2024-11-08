@@ -11,6 +11,7 @@ import {
   LoadingText,
   Clock,
   SyncRotatingDots,
+  WobbleSpin,
 } from "flexikit";
 
 export const data = [
@@ -450,6 +451,38 @@ export const data = [
         defaultValue: "#3498db",
         recommended: "Any color",
         description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+  },
+  {
+    path: "/loaders/WobbleSpin",
+    component: WobbleSpin,
+    importPath: "flexikit",
+    usageCode: "WobbleSpin",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "60px",
+        recommended: "40px to 100px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "red",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "1.5s",
+        recommended: "1s to 3s",
+        description: "Duration of the animation, should be a string with unit",
       },
       {
         name: "loading",
