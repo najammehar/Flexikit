@@ -13,6 +13,8 @@ import {
   SyncRotatingDots,
   WobbleSpin,
   PulseLoader,
+  CircularLoader,
+  CrescentLoader,
 } from "flexikit";
 
 export const data = [
@@ -533,7 +535,73 @@ export const data = [
       },
     ],
     secCol: false,
-  }
+  },
+  {
+    path: "/loaders/CircularLoader",
+    component: CircularLoader,
+    importPath: "flexikit",
+    usageCode: "CircularLoader",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "90px",
+        recommended: "60px to 120px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "3s",
+        recommended: "2s to 4s",
+        description: "Duration of the animation, should be a string with unit",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: false,
+  },
+  {
+    path: "/loaders/CrescentLoader",
+    component: CrescentLoader,
+    importPath: "flexikit",
+    usageCode: "CrescentLoader",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "90px",
+        recommended: "60px to 150px",
+        description: "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "1s",
+        recommended: "2s to 4s",
+        description: "Duration of the animation, should be a string with unit",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: false,
+  },
 ];
 
 // export const buttonData = [
