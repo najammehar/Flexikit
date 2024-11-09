@@ -11,3 +11,5 @@ export { default as LoadingText } from "./components/LoadingText.jsx";
 export { default as Clock } from "./components/Clock.jsx";
 export { default as SyncRotatingDots } from "./components/SyncRotatingDots.jsx";
 export { default as WobbleSpin } from "./components/WobbleSpin.jsx";
+export { default as CircularLoader } from "./components/CircularLoader.jsx";
+export { default as CrescentLoader } from "./components/CrescentLoader.jsx";
