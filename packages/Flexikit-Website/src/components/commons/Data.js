@@ -15,6 +15,9 @@ import {
   PulseLoader,
   CircularLoader,
   CrescentLoader,
+  MultiSquare,
+  SingleSquare,
+  DNAhelixLoader,
 } from "flexikit";
 
 export const data = [
@@ -441,7 +444,8 @@ export const data = [
         name: "size",
         defaultValue: "10px",
         recommended: "10px to 20px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "duration",
@@ -474,7 +478,8 @@ export const data = [
         name: "size",
         defaultValue: "60px",
         recommended: "40px to 100px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "color",
@@ -507,7 +512,8 @@ export const data = [
         name: "size",
         defaultValue: "120",
         recommended: "50 to 150",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "color",
@@ -525,7 +531,8 @@ export const data = [
         name: "borderWidth",
         defaultValue: "20",
         recommended: "10 to 30",
-        description: "Width of the loader border. Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Width of the loader border. Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "loading",
@@ -546,7 +553,8 @@ export const data = [
         name: "size",
         defaultValue: "90px",
         recommended: "60px to 120px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "color",
@@ -579,7 +587,8 @@ export const data = [
         name: "size",
         defaultValue: "90px",
         recommended: "60px to 150px",
-        description: "Can be number or string. In both String & number, unit is assumed as px.",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
       },
       {
         name: "color",
@@ -601,6 +610,115 @@ export const data = [
       },
     ],
     secCol: false,
+  },
+  {
+    path: "/loaders/MultiSquare",
+    component: MultiSquare,
+    importPath: "flexikit",
+    usageCode: "MultiSquare",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "90",
+        recommended: "50 to 150",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "2s",
+        recommended: "1s to 3s",
+        description: "Duration of the animation, should be a string with unit",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: false,
+  },
+  {
+    path: "/loaders/SingleSquare",
+    component: SingleSquare,
+    importPath: "flexikit",
+    usageCode: "SingleSquare",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "90",
+        recommended: "50 to 1",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "2s",
+        recommended: "1s to 3s",
+        description: "Duration of the animation, should be a string with unit",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: false,
+  },
+  {
+    path: "/loaders/DNAhelixLoader",
+    component: DNAhelixLoader,
+    importPath: "flexikit",
+    usageCode: "DNAhelixLoader",
+    propsTable: [
+      {
+        name: "Duration",
+        defaultValue: "3s",
+        recommended: "2s to 5s",
+        description:
+          "Duration of the spinning animation. Should be a string with unit",
+      },
+      {
+        name: "size",
+        defaultValue: "30px",
+        recommended: "25px to 80px",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "#3498db",
+        recommended: "Any color",
+        description: "Primary (Hex color) of the loader, should be a string",
+      },
+      {
+        name: "secondaryColor",
+        defaultValue: "#e74c3c",
+        recommended: "Any color",
+        description: "Secondary (Hex color) of the loader, should be a string",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: true,
   },
 ];
 
