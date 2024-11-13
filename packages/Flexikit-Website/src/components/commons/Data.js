@@ -18,6 +18,7 @@ import {
   MultiSquare,
   SingleSquare,
   DNAhelixLoader,
+  BarLoader,
 } from "flexikit";
 
 export const data = [
@@ -720,6 +721,46 @@ export const data = [
     ],
     secCol: true,
   },
+  {
+    path: "/loaders/BarLoader",
+    component: BarLoader,
+    importPath: "flexikit",
+    usageCode: "BarLoader",
+    propsTable: [
+      {
+        name: "size",
+        defaultValue: "120",
+        recommended: "50 to 150",
+        description:
+          "Can be number or string. In both String & number, unit is assumed as px.",
+      },
+      {
+        name: "color",
+        defaultValue: "white",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "secCol",
+        defaultValue: "white",
+        recommended: "Any color",
+        description: "Hex color of the loader, should be a string",
+      },
+      {
+        name: "duration",
+        defaultValue: "2s",
+        recommended: "1s to 3s",
+        description: "Duration of the animation, should be a string with unit",
+      },
+      {
+        name: "loading",
+        defaultValue: "true",
+        recommended: "true or false",
+        description: "Boolean value to show or hide the loader",
+      },
+    ],
+    secCol: true,
+  }
 ];
 
 // export const buttonData = [
