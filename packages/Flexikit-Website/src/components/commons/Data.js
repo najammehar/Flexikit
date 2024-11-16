@@ -17,7 +17,6 @@ import {
   CrescentLoader,
   MultiSquare,
   SingleSquare,
-  DNAhelixLoader,
   BarLoader,
 } from "flexikit";
 
@@ -679,47 +678,6 @@ export const data = [
       },
     ],
     secCol: false,
-  },
-  {
-    path: "/loaders/DNAhelixLoader",
-    component: DNAhelixLoader,
-    importPath: "flexikit",
-    usageCode: "DNAhelixLoader",
-    propsTable: [
-      {
-        name: "Duration",
-        defaultValue: "3s",
-        recommended: "2s to 5s",
-        description:
-          "Duration of the spinning animation. Should be a string with unit",
-      },
-      {
-        name: "size",
-        defaultValue: "30px",
-        recommended: "25px to 80px",
-        description:
-          "Can be number or string. In both String & number, unit is assumed as px.",
-      },
-      {
-        name: "color",
-        defaultValue: "#3498db",
-        recommended: "Any color",
-        description: "Primary (Hex color) of the loader, should be a string",
-      },
-      {
-        name: "secondaryColor",
-        defaultValue: "#e74c3c",
-        recommended: "Any color",
-        description: "Secondary (Hex color) of the loader, should be a string",
-      },
-      {
-        name: "loading",
-        defaultValue: "true",
-        recommended: "true or false",
-        description: "Boolean value to show or hide the loader",
-      },
-    ],
-    secCol: true,
   },
   {
     path: "/loaders/BarLoader",

@@ -32,7 +32,7 @@ const LoadingText = ({
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="block">
       <span className="tracking-wide" style={textStyle}>
         Loading
         <span className="inline-block w-16 text-left">{dots}</span>

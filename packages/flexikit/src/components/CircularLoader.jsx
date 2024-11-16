@@ -60,7 +60,7 @@ function CircularLoader({
   }));
 
   return (
-    <div className={loading ? "flex justify-center items-center" : "hidden"}>
+    <div className={loading ? "block" : "hidden"}>
       <style>{keyframes}</style>
       <div style={containerStyle}>
         {dotPositions.map((dotStyle, index) => (

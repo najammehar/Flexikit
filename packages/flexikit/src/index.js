@@ -16,5 +16,4 @@ export { default as CircularLoader } from "./components/CircularLoader.jsx";
 export { default as CrescentLoader } from "./components/CrescentLoader.jsx";
 export { default as MultiSquare } from "./components/MultiSquare.jsx";
 export { default as SingleSquare } from "./components/SingleSquare.jsx";
-export { default as DNAhelixLoader } from "./components/DNAhelixLoader.jsx";
 export { default as BarLoader } from "./components/BarLoader.jsx";

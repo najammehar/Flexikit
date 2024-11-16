@@ -57,7 +57,7 @@ const CrescentLoader = ({
   };
 
   return (
-    <div className={loading ? "flex justify-center items-center" : "hidden"}>
+    <div className={loading ? "block" : "hidden"}>
       <style>{keyframes}</style>
       <div
         className="relative"

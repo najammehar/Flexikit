@@ -1,6 +1,6 @@
 {
-  "name": "flexikit",
-  "version": "1.0.0",
+  "name": "flexi-react",
+  "version": "1.0.1",
   "description": "A flexible React component library",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -48,6 +48,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/najammehar/flexikit"
+    "url": "git+https://github.com/najammehar/flexikit.git"
   }
 }

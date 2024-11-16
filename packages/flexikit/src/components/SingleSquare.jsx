@@ -52,7 +52,7 @@ function SingleSquareLoader({
   if (!loading) return null;
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="block">
       <style>{keyframes}</style>
       <div style={styles.container}>
         <div style={styles.square} />

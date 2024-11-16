@@ -15,7 +15,7 @@ const PulseLoader = ({
   const delay = numericDuration / 2;
 
   return (
-    <>
+    <div className={`${loading ? "block" : "hidden"}`}>
       <style>
         {`
                 @keyframes loaderPulse {
@@ -32,11 +32,7 @@ const PulseLoader = ({
                 }
             `}
       </style>
-      <div
-        className={`relative ${
-          loading ? "flex" : "hidden"
-        } items-center justify-center`}
-      >
+      <div className={`relative flex items-center justify-center`}>
         <div
           className="absolute rounded-full"
           style={{
@@ -58,7 +54,7 @@ const PulseLoader = ({
           }}
         />
       </div>
-    </>
+    </div>
   );
 };
 

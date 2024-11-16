@@ -1,5 +1,5 @@
 import React from "react";
-import '../index.css';
+import "../index.css";
 import { constSize, constColor } from "../constant";
 
 function WaveLoader({
@@ -39,11 +39,13 @@ function WaveLoader({
   };
 
   return (
-    <div className={loading ? "flex justify-center items-center" : "hidden"}>
-      <style>{keyframes}</style>
-      <div style={{ ...dotStyle, ...dot1 }} />
-      <div style={{ ...dotStyle, ...dot2 }} />
-      <div style={{ ...dotStyle, ...dot3 }} />
+    <div className={`${loading ? "block" : "hidden"}`}>
+      <div className="flex justify-center items-center">
+        <style>{keyframes}</style>
+        <div style={{ ...dotStyle, ...dot1 }} />
+        <div style={{ ...dotStyle, ...dot2 }} />
+        <div style={{ ...dotStyle, ...dot3 }} />
+      </div>
     </div>
   );
 }

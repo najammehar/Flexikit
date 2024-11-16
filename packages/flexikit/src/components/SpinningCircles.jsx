@@ -1,6 +1,6 @@
 import React from "react";
 import '../index.css';
-import { constSize, constColor, constSecColor } from "../constant";
+import { constColor, constSecColor, constSize } from "../constant";
 
 function SpinningCircles({
   duration = "2s",
@@ -54,8 +54,10 @@ function SpinningCircles({
   };
 
   return (
-    <div className={`${loading ? 'block' : 'hidden'}`} style={{...spin, height: `${size}`, width: `${size}`}}>
-      <div className="flex gap-1 mb-1">
+    <div className={`${loading ? 'block' : 'hidden'}`}>
+      <div className="inline-block" style={{...spin, height: `${size}`, width: `${size}`}}>
+      <div className="flex gap-1 mb-1"
+      >
         <style>{keyframes}</style>
         <div
           style={{ ...sizeStyle, ...degree, backgroundColor: color }}
@@ -87,6 +89,7 @@ function SpinningCircles({
           }}
           className="rounded-full"
         />
+      </div>
       </div>
     </div>
   );
